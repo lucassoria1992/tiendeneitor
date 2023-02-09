@@ -1,0 +1,84 @@
+.caja1 {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 15px;
+    transition: width 2s;
+
+}
+
+.caja1:hover {
+
+    background: aqua;
+    z-index: 1;
+}
+
+.cajasup {
+    display: flex;
+    justify-content: center;
+
+}
+
+.caja2 {
+    z-index: 2;
+    position: absolute;
+    transition: 0.5s;
+    margin: 5px;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    text-justify:auto;
+}
+
+.caja2:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -30px;
+    right: -30px;
+    background: #00838d;
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.75s ease-out;
+    text-align-last: center}   
+
+.caja2:hover:before {
+    transform: scale(21);
+}
+
+.textDescription{
+    position: absolute;
+    opacity: 0;
+    height: 10rem;
+    width: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.75s ease-out;
+}
+
+.textDescription:hover{
+    opacity: 1;
+}
+.linkeado{
+    text-decoration: none;
+    text-decoration-color: white;
+    color: white;
+    font-size: medium;
+    font-style: bold;
+
+
+}
+
+.linkeado:hover{
+text-decoration: none;
+color: white;
+
+}

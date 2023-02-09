@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState } from 'react';
+import ProductItemCard from './Components/Card';
+import {Container} from 'react-bootstrap'
+import Navbar from './Components/NavBar';
 
 function App() {
+
+  const API_URL = 'https://fakestoreapi.com/products';
+
+  const [productItem, setproductItem] = useState();
+
+  const FetchProducts = (url) => {
+  fetch(url)
+  .then(res => res.json())
+  .then(data => setproductItem(data)) 
+  .catch(error => console.log(error))
+  }
+
+  useEffect(() => {
+    FetchProducts(API_URL)
+  }, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <>
+    <div className="App " >
+    
+    <Navbar  />
+
+    <Container className="mt-3">
+      <ProductItemCard productItems = {productItem} />
+    </Container>
     </div>
+    </>
   );
 }
 
