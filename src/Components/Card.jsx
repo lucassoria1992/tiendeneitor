@@ -1,46 +1,42 @@
-import Button from 'react-bootstrap/Button';
-import { Card } from 'react-bootstrap';
+import { Button, Col, Row, Modal, Container } from 'react-bootstrap';
 import React, { useState } from 'react';
 import cardStyles from '../Styles/cardStyles.css';
-import MydModalWithGrid from './MydModalWithGrid';
-import Modal from 'react-bootstrap/Modal';
+import Modalito from './Modal'
 
 
 
 
 const ProductItemCard = ({ productItems = [] }) => {
-    const [modalShow, setModalShow] = useState(false);
 
     return (
 
         <div className='row'>
 
-            {productItems.map((item, index) => (
+            {
 
-                <div key={index} className='col-lg-2 col-sm-6 cajasup' >
+                productItems.map((item, index) => (
 
-                    <img src={item.image} className='caja1 ' />
-                    <div className='caja2 '>
-                        <div className='textDescription' >
-                            
-                            <a  className='linkeado'  onClick={() => setModalShow(true) && MydModalWithGrid(item)}>
-                                See More!
-                            </a>
+                    <div key={index} className='col-lg-2 col-sm-6 cajasup' >
 
-                            <MydModalWithGrid show={modalShow} onHide={() => setModalShow(false)} />
+                        <img src={item.image} className='caja1 w-100 h-100' />
+                        <div className='caja2 '>
+                            <div className='textDescription' >
+                               <Modalito items = {item} />
+                            </div>
                         </div>
-                    </div>
-                    <div className="go-corner" />
+                        <div className="go-corner" />
 
 
-                </div >
+                    </div >
 
 
-            ))}
+                ))}
 
         </div >
     )
 }
+
+
 
 
 export default ProductItemCard;
