@@ -1,0 +1,12 @@
+.aveeltexto{
+    color:black;
+    font-size:9pt;
+    overflow:hidden;
+    white-space:normal;
+    text-overflow:ellipsis;
+}
+.textprice{
+    font-size: 20px;
+    font-weight: bolder;
+    
+}

@@ -26,9 +26,9 @@ function App() {
     <>
     <div className="App " >
     
-    <Navbar  />
+      <Navbar  />
 
-    <Container className="mt-3">
+    <Container className="mt-3" >
       <ProductItemCard productItems = {productItem} />
     </Container>
     </div>

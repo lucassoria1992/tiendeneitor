@@ -1,26 +1,22 @@
-import { Button, Col, Row, Modal, Container } from 'react-bootstrap';
-import React, { useState } from 'react';
+import React from 'react';
 import cardStyles from '../Styles/cardStyles.css';
 import Modalito from './Modal'
-
-
-
 
 const ProductItemCard = ({ productItems = [] }) => {
 
     return (
 
-        <div className='row'>
+        <div className='row d-flex justify-content-center col-12 '>
 
             {
 
                 productItems.map((item, index) => (
 
-                    <div key={index} className='col-lg-2 col-sm-6 cajasup' >
+                    <div key={index} className='col-lg-4 col-sm-4 cajasup' >
 
-                        <img src={item.image} className='caja1 w-100 h-100' />
+                        <img src={item.image} className='caja1' />
                         <div className='caja2 '>
-                            <div className='textDescription' >
+                            <div className='textDescription justify-content-center' >
                                <Modalito items = {item} />
                             </div>
                         </div>
